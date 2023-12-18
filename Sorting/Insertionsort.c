@@ -1,5 +1,5 @@
 #include <stdio.h>
-void insertionsort(int arr[], int n)
+void insertionSort(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -15,11 +15,22 @@ void insertionsort(int arr[], int n)
 }
 int main()
 {
-    int arr[] = {7, 18, 34, 76, 90};
-    int n = 5;
-    insertionsort(arr, n);
-    printf("Sorted array:\n");
-    for (int i = 0; i < n; i++)
+    int n, arr[100], i;
+    printf("Enter no of elements:");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("Original array: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    insertionSort(arr, n);
+    printf("\nSorted array:");
+    for (i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }

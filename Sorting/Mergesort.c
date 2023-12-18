@@ -36,14 +36,14 @@ void merge(int a[], int l, int m, int r)
         a[i] = b[i];
     }
 }
-void merge_sort(int a[], int l, int r)
+void mergeSort(int a[], int l, int r)
 {
     int mid;
     if (l < r)
     {
         mid = (l + r) / 2;
-        merge_sort(a, l, mid);
-        merge_sort(a, mid + 1, r);
+        mergeSort(a, l, mid);
+        mergeSort(a, mid + 1, r);
         merge(a, l, mid + 1, r);
     }
 }
@@ -59,13 +59,13 @@ void main()
     {
         scanf("%d", &a[i]);
     }
-    printf("Elements before sort:\n");
+    printf("Original array:");
     for (i = 0; i < n; i++)
     {
         printf("%d\t", a[i]);
     }
-    merge_sort(a, l, r);
-    printf("\nElements after sort:\n");
+    mergeSort(a, l, r);
+    printf("\nSorted array:");
     for (i = 0; i < n; i++)
     {
         printf("%d\t", a[i]);

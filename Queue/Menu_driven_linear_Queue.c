@@ -1,64 +1,75 @@
-#include<stdio.h>
+#include <stdio.h>
 #define MAX 100
 int queue[MAX];
-int rear=-1;
-int front=0;
-int choice,item,i;
+int rear = -1;
+int front = 0;
+int choice, item, i;
 void enqueue();
 void dequeue();
 void display();
-void main(){
+void main()
+{
     printf("1.insert\n2.delete\n3.display\n4.exit\n");
-     do{
+    do
+    {
         printf("Enter your choice:");
-        scanf("%d",&choice);
-        switch(choice){
-            case 1:
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
             enqueue();
             break;
-            case 2:
+        case 2:
             dequeue();
             break;
-            case 3:
+        case 3:
             display();
             break;
-            case 4:
+        case 4:
             printf("exiting.....");
             break;
-            default:
+        default:
             printf("Enter a valid choice.\n");
-            
         }
-        
-    }
-    while(choice!=4);
+
+    } while (choice != 4);
 }
-void enqueue(){
-    if(rear==MAX-1){
+void enqueue()
+{
+    if (rear == MAX - 1)
+    {
         printf("Queue is Full.\n");
     }
-    else{
+    else
+    {
         rear++;
         printf("Enter item to be inserted:");
-        scanf("%d",&queue[rear]);
+        scanf("%d", &queue[rear]);
     }
 }
-void dequeue(){
-    if(rear<front){
+void dequeue()
+{
+    if (rear < front)
+    {
         printf("Queue is Empty.\n");
     }
-    else{
-        printf("%d is deleted.\n",queue[front]);
+    else
+    {
+        printf("%d is deleted.\n", queue[front]);
         front++;
     }
 }
-void display(){
-     if(rear<front){
+void display()
+{
+    if (rear < front)
+    {
         printf("Queue is Empty.\n");
     }
-    else{
-        for(i=front;i<=rear;i++){
-            printf("%d\t",queue[i]);
+    else
+    {
+        for (i = front; i <= rear; i++)
+        {
+            printf("%d\t", queue[i]);
         }
         printf("\n");
     }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-int partition(int a[10], int l, int r)
+int partation(int a[10], int l, int r)
 {
     int x = l;
     int y = r;
@@ -26,7 +26,7 @@ void quick(int a[10], int l, int r)
     int p;
     if (l < r)
     {
-        p = partition(a, l, r);
+        p = partation(a, l, r);
         quick(a, l, p - 1);
         quick(a, p + 1, r);
     }
@@ -43,15 +43,15 @@ void main()
     {
         scanf("%d", &a[i]);
     }
-    printf("Element before sort:\n");
+    printf("Original array: ");
     for (i = 0; i < n; i++)
     {
-        printf("%d\t", a[i]);
+        printf("%d ", a[i]);
     }
-    quick(a, l, r);
-    printf("\nElements after sort:\n");
+    quick(a,l,r);
+    printf("\nSorted array: ");
     for (i = 0; i < n; i++)
     {
-        printf("%d\t", a[i]);
+        printf("%d ", a[i]);
     }
 }

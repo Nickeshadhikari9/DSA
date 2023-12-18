@@ -1,11 +1,12 @@
 #include <stdio.h>
-void selectionsort(int arr[], int n)
+void selectionSort(int arr[], int n)
 {
-    for (int i = 0; i < n; i++)
+    int i,least,position,j,temp;
+    for (i = 0; i < n; i++)
     {
-        int least = arr[i];
-        int position = i;
-        for (int j = i + 1; j < n; j++)
+        least = arr[i];
+        position = i;
+        for (j = i + 1; j < n; j++)
         {
             if (arr[j] < arr[i])
             {
@@ -13,17 +14,28 @@ void selectionsort(int arr[], int n)
                 position = j;
             }
         }
-        int temp = arr[position];
+        temp = arr[position];
         arr[position] = arr[i];
         arr[i] = temp;
     }
 }
 int main()
 {
-    int arr[] = {25, 57, 48, 37, 12};
-    int n = 5;
-    selectionsort(arr, n);
-    printf("Sorted array:\n");
+    int n, arr[100], i;
+    printf("Enter no of elements:");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("Original array:");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    selectionSort(arr, n);
+    printf("\nSorted array:");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);

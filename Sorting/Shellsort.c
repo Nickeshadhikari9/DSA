@@ -1,14 +1,18 @@
 #include <stdio.h>
 void main()
 {
-    int a[100], n;
-    int k, increment, i, j;
+    int a[100], n, k, increment, i, j;
     printf("Enter number of elements:");
     scanf("%d", &n);
     printf("Enter %d elements:\n", n);
     for (i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
+    }
+     printf("Original array:");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\t", a[i]);
     }
     for (increment = n / 2; increment > 0; increment /= 2)
     {
@@ -22,7 +26,7 @@ void main()
             a[j] = temp;
         }
     }
-    printf("After Sorting:\n");
+    printf("\nSorted array:");
     for (k = 0; k < n; k++)
     {
         printf("%d\t", a[k]);
